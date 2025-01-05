@@ -1,0 +1,69 @@
+/* LandingPage.css */
+.email-icon {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-size: cover;
+	animation: float 5s ease-in-out infinite alternate;
+}
+
+.gradient-1 {
+	background: linear-gradient(45deg, rgba(255, 0, 150, 0.5), rgba(0, 204, 255, 0.5));
+}
+
+.gradient-2 {
+	background: linear-gradient(45deg, rgba(255, 255, 0, 0.5), rgba(255, 0, 0, 0.5));
+}
+
+.gradient-3 {
+	background: linear-gradient(45deg, rgba(0, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
+}
+
+.email-icon:nth-child(1) {
+	top: 10%;
+	left: 20%;
+}
+.email-icon:nth-child(2) {
+	top: 50%;
+	left: 60%;
+}
+.email-icon:nth-child(3) {
+	top: 80%;
+	left: 30%;
+}
+.email-icon:nth-child(4) {
+	top: 15%;
+	left: 70%;
+}
+.email-icon:nth-child(5) {
+	top: 25%;
+	left: 40%;
+}
+.email-icon:nth-child(6) {
+	top: 35%;
+	left: 10%;
+}
+.email-icon:nth-child(7) {
+	top: 45%;
+	left: 80%;
+}
+
+@keyframes float {
+	0% {
+		transform: translateY(0) translateX(0);
+	}
+	50% {
+		transform: translateY(-10px) translateX(10px);
+	}
+	100% {
+		transform: translateY(0) translateX(0);
+	}
+}
+.gradient-button {
+	background: linear-gradient(45deg, #1e90ff, #00bfff);
+	transition: background 0.3s ease;
+}
+
+.gradient-button:hover {
+	background: linear-gradient(45deg, #1c86ee, #1e90ff);
+}

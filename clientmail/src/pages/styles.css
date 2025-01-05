@@ -1,0 +1,161 @@
+/* Button Hover Animation */
+button:hover {
+	transform: scale(1.05);
+	transition: transform 0.2s ease-in-out;
+}
+
+/* Input Focus Animation */
+input:focus {
+	border-color: #3182ce;
+	transition: border-color 0.3s ease-in-out;
+}
+.sidebar-shadow {
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+/* Form Load Animation */
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.form-container {
+	animation: slideIn 0.5s ease-out;
+}
+
+/* client/src/admin/pages/Dashboard.css */
+.dashboard {
+	display: flex;
+	height: 100vh;
+}
+
+.menu-button {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 1;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.sidenav {
+	background-color: #111;
+	color: white;
+	overflow-x: hidden;
+	transition: 0.3s;
+	position: relative;
+}
+
+.sidenav-content {
+	padding: 20px;
+}
+
+.drag-handle {
+	width: 10px;
+	cursor: ew-resize;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main-content {
+	flex-grow: 1;
+	padding: 20px;
+	background-color: #f4f4f4;
+}
+/* Button Hover Animation */
+button:hover {
+	transform: scale(1.05);
+	transition: transform 0.2s ease-in-out;
+}
+
+/* Input Focus Animation */
+input:focus {
+	border-color: #3182ce;
+	transition: border-color 0.3s ease-in-out;
+}
+
+/* Form Load Animation */
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.form-container {
+	animation: slideIn 0.5s ease-out;
+}
+
+/* Dashboard Styles */
+.dashboard {
+	display: flex;
+	height: 100vh;
+}
+
+.menu-button {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 1;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+.sidenav {
+	background-color: #111;
+	color: white;
+	overflow-x: hidden;
+	transition: 0.3s;
+	position: relative;
+}
+
+.sidenav-content {
+	padding: 20px;
+}
+
+.sidenav-content ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.sidenav-content li {
+	margin: 10px 0;
+}
+
+.sidenav-content a {
+	color: white;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+
+.sidenav-content a:hover {
+	color: #f4f4f4;
+}
+
+.drag-handle {
+	width: 10px;
+	cursor: ew-resize;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main-content {
+	flex-grow: 1;
+	padding: 20px;
+	background-color: #f4f4f4;
+}
