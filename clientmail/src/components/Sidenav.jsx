@@ -61,7 +61,7 @@ const Sidebar = ({ selected, setSelected }) => {
 				<div>
 					<div className="p-4 rounded-md flex items-center">
 						<img src="../assets/react.svg" alt="Logo" className="h-10 w-10 mr-2" />
-						<h2 className="text-xl font-bold text-green-600">My Mail App</h2>
+						<h2 className="text-xl font-bold text-purple-500">My Mail App</h2>
 					</div>
 					<ul className="space-y-2 p-4">
 						<li>
@@ -70,7 +70,7 @@ const Sidebar = ({ selected, setSelected }) => {
 								onClick={() => handleNavigation("/home", "Inbox")}
 								className={`flex items-center p-2 rounded-md ${
 									selected === "Inbox"
-										? "bg-blue-100 text-green-600 font-bold"
+										? "bg-blue-100 text-purple-500 font-bold"
 										: "text-gray-700 hover:bg-gray-200"
 								}`}
 							>
@@ -84,7 +84,7 @@ const Sidebar = ({ selected, setSelected }) => {
 								onClick={() => handleNavigation("/home/sent", "Sent")}
 								className={`flex items-center p-2 rounded-md ${
 									selected === "Sent"
-										? "bg-blue-100 text-green-600 font-bold"
+										? "bg-blue-100 text-purple-500 font-bold"
 										: "text-gray-700 hover:bg-gray-200"
 								}`}
 							>
@@ -98,7 +98,7 @@ const Sidebar = ({ selected, setSelected }) => {
 								onClick={() => handleNavigation("/home/drafts", "Drafts")}
 								className={`flex items-center p-2 rounded-md ${
 									selected === "Drafts"
-										? "bg-blue-100 text-green-600 font-bold"
+										? "bg-blue-100 text-purple-500 font-bold"
 										: "text-gray-700 hover:bg-gray-200"
 								}`}
 							>
@@ -117,7 +117,7 @@ const Sidebar = ({ selected, setSelected }) => {
 								onClick={() => handleNavigation("/home/profile", "Profile")}
 								className={`flex items-center p-2 rounded-md ${
 									selected === "Profile"
-										? "bg-blue-100 text-green-600 font-bold"
+										? "bg-blue-100 text-purple-500 font-bold"
 										: "text-gray-700 hover:bg-gray-200"
 								}`}
 							>
@@ -131,7 +131,7 @@ const Sidebar = ({ selected, setSelected }) => {
 								onClick={() => handleNavigation("/home/account-settings", "Account Settings")}
 								className={`flex items-center p-2 rounded-md ${
 									selected === "Account Settings"
-										? "bg-blue-100 text-green-600 font-bold"
+										? "bg-blue-100 text-purple-500 font-bold"
 										: "text-gray-700 hover:bg-gray-200"
 								}`}
 							>
@@ -145,7 +145,7 @@ const Sidebar = ({ selected, setSelected }) => {
 								onClick={() => handleNavigation("/home/billing", "Billing")}
 								className={`flex items-center p-2 rounded-md ${
 									selected === "Billing"
-										? "bg-blue-100 text-green-600 font-bold"
+										? "bg-blue-100 text-purple-500 font-bold"
 										: "text-gray-700 hover:bg-gray-200"
 								}`}
 							>

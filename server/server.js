@@ -18,7 +18,6 @@ app.use(express.json());
 
 app.use(cors({ methods: ["GET", "POST"], origin: "*" }));
 
-
 app.use("/", userRouter);
 app.use("/api", apiRouter);
 app.listen(port, () => {

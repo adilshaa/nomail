@@ -1,64 +1,50 @@
+body {
+	font-family: "Poppins", sans-serif;
+}
+
 /* LandingPage.css */
-.email-icon {
-	position: absolute;
-	width: 100px;
-	height: 100px;
-	background-size: cover;
-	animation: float 5s ease-in-out infinite alternate;
+.animated-text {
+	background: linear-gradient(90deg, rgb(242, 49, 49), rgb(246, 246, 41), rgb(253, 180, 192));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: typing 1s steps(30, end), blink-caret 0.75s step-end infinite;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 0.1em solid rgb(249, 212, 145);
 }
 
-.gradient-1 {
-	background: linear-gradient(45deg, rgba(255, 0, 150, 0.5), rgba(0, 204, 255, 0.5));
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
 }
 
-.gradient-2 {
-	background: linear-gradient(45deg, rgba(255, 255, 0, 0.5), rgba(255, 0, 0, 0.5));
-}
-
-.gradient-3 {
-	background: linear-gradient(45deg, rgba(0, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
-}
-
-.email-icon:nth-child(1) {
-	top: 10%;
-	left: 20%;
-}
-.email-icon:nth-child(2) {
-	top: 50%;
-	left: 60%;
-}
-.email-icon:nth-child(3) {
-	top: 80%;
-	left: 30%;
-}
-.email-icon:nth-child(4) {
-	top: 15%;
-	left: 70%;
-}
-.email-icon:nth-child(5) {
-	top: 25%;
-	left: 40%;
-}
-.email-icon:nth-child(6) {
-	top: 35%;
-	left: 10%;
-}
-.email-icon:nth-child(7) {
-	top: 45%;
-	left: 80%;
-}
-
-@keyframes float {
-	0% {
-		transform: translateY(0) translateX(0);
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
 	}
 	50% {
-		transform: translateY(-10px) translateX(10px);
-	}
-	100% {
-		transform: translateY(0) translateX(0);
+		border-color: rgb(238, 191, 103);
 	}
 }
+
+.blurred-background {
+	position: absolute;
+	top: 17%;
+	left: 50%;
+	width: 829px;
+	height: 256px;
+	background: radial-gradient(circle, rgba(255, 0, 0, 0.3), rgba(255, 255, 0, 0.3), rgba(255, 192, 203, 0.3));
+	filter: blur(89px);
+	transform: translate(-50%, -50%);
+	z-index: 0;
+}
+
 .gradient-button {
 	background: linear-gradient(45deg, #1e90ff, #00bfff);
 	transition: background 0.3s ease;
@@ -66,4 +52,37 @@
 
 .gradient-button:hover {
 	background: linear-gradient(45deg, #1c86ee, #1e90ff);
+}
+.icon {
+	display: inline-block;
+}
+
+.grid {
+	display: grid;
+	gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+	.grid-cols-2 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1024px) {
+	.grid-cols-3 {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.rotate {
+	animation: rotate 15s linear infinite;
 }

@@ -36,14 +36,14 @@ const Sent = () => {
 	};
 
 	return (
-		<div className="flex flex-col lg:flex-row h-screen bg-gray-100">
+		<div className="flex flex-col lg:flex-row  bg-gray-100">
 			{/* Sidebar */}
 
 			{/* Main Content */}
 			<div className="flex flex-col flex-1 relative">
 				{/* Render the selected component */}
-				<main className="flex-1 p-4 overflow-y-auto">
-					<h2 className="text-2xl font-bold mb-4">{selected}</h2>
+				<main className="flex-1 px-2 overflow-y-auto">
+					<h2 className="text-2xl font-bold mb-2">{selected}</h2>
 					<EmailInbox prompt={editorContent} />
 
 					<EmailPreview apiResponse={response} onContentChange={handleEditorContentChange} />

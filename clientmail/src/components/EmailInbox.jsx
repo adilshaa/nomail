@@ -84,8 +84,8 @@ const EmailInbox = ({ prompt }) => {
 	};
 
 	return (
-		<div className="bg-white p-4 shadow rounded-md mb-4">
-			<h3 className="font-bold mb-2">Compose Email</h3>
+		<div className="bg-white p-2 shadow rounded-md mb-4">
+			<h3 className="font-bold mb-1">Compose Email</h3>
 			<div
 				className={`w-full p-2 mb-2 border rounded-md flex flex-wrap items-center ${
 					isInvalidEmail ? "border-red-500" : ""

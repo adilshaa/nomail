@@ -159,3 +159,46 @@ input:focus {
 	padding: 20px;
 	background-color: #f4f4f4;
 }
+
+
+@keyframes shake {
+	0% { transform: translateX(0); }
+	25% { transform: translateX(-5px); }
+	50% { transform: translateX(5px); }
+	75% { transform: translateX(-5px); }
+	100% { transform: translateX(0); }
+  }
+  
+  .shake {
+	animation: shake 0.5s ease;
+  }
+  
+  .custom-radio {
+	appearance: none;
+	background-color: #fff;
+	border: 2px solid #ccc;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	position: relative;
+	outline: none;
+  }
+  
+  .custom-radio:checked {
+	border-color: #38a169; /* Green border */
+  }
+  
+  .custom-radio:checked::before {
+	content: '';
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #38a169; /* Green dot */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  }
+  

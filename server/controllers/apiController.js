@@ -2,6 +2,9 @@
 const { google } = require("googleapis");
 const { checkgpt } = require("../MML/_openai.gpt.pretrained");
 const { generateRequestMessage } = require("../MML/format.repsones");
+const env = require("dotenv").config();
+
+const stripe = require("stripe")(process.env.SK_STRIPE); // Add your Stripe secret key here
 
 const oauth2Client = new google.auth.OAuth2(process.env.CLIENT_ID, process.env.CLIENT_SECRET, process.env.REDIRECT_URI);
 
@@ -138,9 +141,67 @@ async function generateCode(req, res) {
 	res.json({ code: JSON.parse(response[0].content).schema.code });
 }
 
+// Create payment intent route
+async function createPaymentIntent(req, res) {
+	const { amount } = req.body;
+	console.log(amount);
+	try {
+		const paymentIntent = await stripe.paymentIntents.create({
+			amount,
+			currency: "usd",
+		});
+
+		res.send({
+			clientSecret: paymentIntent.client_secret,
+		});
+	} catch (error) {
+		res.status(500).send({ error: error.message });
+	}
+}
+
+// Cancel payment intent route
+async function cancelPaymentIntent(req, res) {
+	const { paymentIntentId } = req.body;
+
+	try {
+		const canceledPaymentIntent = await stripe.paymentIntents.cancel(paymentIntentId);
+
+		res.send({
+			message: "Payment intent canceled successfully",
+			canceledPaymentIntent,
+		});
+	} catch (error) {
+		res.status(500).send({ error: error.message });
+	}
+} // apiController.js
+
+// Payment success manager route
+async function paymentSuccessManager(req, res) {
+	const { paymentIntentId } = req.body;
+
+	try {
+		// Retrieve the payment intent from Stripe
+		const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
+
+		// Check if the payment was successful
+		if (paymentIntent.status === "succeeded") {
+			// Update your system (e.g., mark order as paid, send confirmation email)
+			// Example: updateOrderStatus(paymentIntentId, 'paid');
+
+			res.status(200).send({ message: "Payment was successful", paymentIntent });
+		} else {
+			res.status(400).send({ message: "Payment not successful", paymentIntent });
+		}
+	} catch (error) {
+		res.status(500).send({ error: error.message });
+	}
+}
+
 module.exports = {
 	auth,
 	oauth2callback,
 	sendEmail,
 	generateCode,
+	createPaymentIntent,
+	paymentSuccessManager, // Export the new function
 };
